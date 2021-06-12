@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -30,6 +31,18 @@ public class UserController {
   @DeleteMapping("/{id}")
   public ResponseEntity deleteUserById(@PathVariable("id") String userId){
     if(userService.deleteUserById(userId)){
+      return new ResponseEntity(HttpStatus.OK);
+    } else{
+      return new ResponseEntity(HttpStatus.NOT_FOUND);
+    }
+  }
+
+  @PutMapping("/{id}")
+  public ResponseEntity<?> updateUserById(
+    @RequestBody User user,
+    @PathVariable("id") String userId
+  ){
+    if(userService.update(user, userId)){
       return new ResponseEntity(HttpStatus.OK);
     } else{
       return new ResponseEntity(HttpStatus.NOT_FOUND);

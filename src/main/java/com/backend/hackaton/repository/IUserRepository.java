@@ -13,4 +13,5 @@ public interface IUserRepository extends MongoRepository<User, String>{
   User save(User user);
   Optional<User> getUserById(String userId);
   void deleteById(String userId);
+
 }

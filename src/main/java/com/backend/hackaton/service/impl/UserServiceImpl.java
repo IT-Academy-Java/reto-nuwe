@@ -32,5 +32,13 @@ public class UserServiceImpl implements IUserService {
     }).orElse(false);
   }
 
+  @Override
+  public Boolean update(User user, String userId) {
+    return getUserById(userId).map(userToModify -> {
+      user.setId(userId);
+      userRepository.save(user);
+      return true;
+    }).orElse(false);
+  }
 
 }
