@@ -24,5 +24,13 @@ public class UserServiceImpl implements IUserService {
     return userRepository.getUserById(userId);
   }
 
+  @Override
+  public Boolean deleteUserById(String userId) {
+    return getUserById(userId).map(user -> {
+      userRepository.deleteById(userId);
+      return true;
+    }).orElse(false);
+  }
+
 
 }

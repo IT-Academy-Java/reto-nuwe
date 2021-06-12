@@ -27,4 +27,13 @@ public class UserController {
     return new ResponseEntity<>(userService.save(user), HttpStatus.CREATED);
   }
 
+  @DeleteMapping("/{id}")
+  public ResponseEntity deleteUserById(@PathVariable("id") String userId){
+    if(userService.deleteUserById(userId)){
+      return new ResponseEntity(HttpStatus.OK);
+    } else{
+      return new ResponseEntity(HttpStatus.NOT_FOUND);
+    }
+  }
+
 }
