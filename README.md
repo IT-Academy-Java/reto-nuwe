@@ -3,7 +3,9 @@
 ## Technology Stack
 - Java 15
 - MongoDB
-- Spring framework
+- Spring Boot - Ver 2.5.1
+- Github API
+- Gitlab API
 
 
 ## RUTAS IMPLEMENTADAS:
