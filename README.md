@@ -1,5 +1,11 @@
 # Reto backend
 
+## Technology Stack
+- Java 15
+- MongoDB
+- Spring framework
+
+
 ## RUTAS IMPLEMENTADAS:
 
 ## USER
