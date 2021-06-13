@@ -10,9 +10,9 @@
 - Gitlab API
 
 
-## ROUTES IMPLEMENTED:
+## Routes implemented:
 
-## USER
+## User
 
 ```
 GET /user/{id}
@@ -30,13 +30,13 @@ DELETE /user/{id}
 PUT /user/{id}
 ```
 
-## USER GITHUB
+## User Github
 ```
 GET /user/{id}/github
 ```
 
 
-## USER GITLAB
+## User Gitlab
 ```
 GET /user/{id}/gitlab
 ```
