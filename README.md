@@ -1,4 +1,5 @@
-# Reto backend
+# NUWE HACK
+## Backend project
 
 ## Technology Stack
 - Java 15
@@ -9,7 +10,7 @@
 - Gitlab API
 
 
-## RUTAS IMPLEMENTADAS:
+## ROUTES IMPLEMENTED:
 
 ## USER
 
