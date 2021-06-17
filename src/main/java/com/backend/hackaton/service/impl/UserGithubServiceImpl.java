@@ -4,6 +4,7 @@ import com.backend.hackaton.entity.UserGithub;
 import com.backend.hackaton.service.IUserGithubService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -20,6 +21,11 @@ public class UserGithubServiceImpl implements IUserGithubService {
     UserGithub user = restTemplate
       .getForObject(githubApiUrl,  UserGithub.class);
     return user;
+  }
+
+  @Bean
+  public RestTemplate restTemplate() {
+    return new RestTemplate();
   }
 
 

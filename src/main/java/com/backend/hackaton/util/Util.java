@@ -1,6 +1,5 @@
 package com.backend.hackaton.util;
 
-import com.backend.hackaton.entity.UserGithub;
 import com.backend.hackaton.entity.UserGitlab;
 
 import java.util.Arrays;
