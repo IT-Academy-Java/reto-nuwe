@@ -1,6 +1,7 @@
 package com.backend.hackaton.controller;
 
 import com.backend.hackaton.entity.User;
+import com.backend.hackaton.service.impl.MailboxlayerServiceImpl;
 import com.backend.hackaton.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,10 @@ public class UserController {
   @Autowired
   private UserServiceImpl userService;
 
+  @Autowired
+  private MailboxlayerServiceImpl mailboxlayerService;
+
+
   @GetMapping("/{id}")
   @ResponseBody
   public ResponseEntity<User> getUserById(@PathVariable("id") String userId){
@@ -25,7 +30,11 @@ public class UserController {
 
   @PostMapping
   public ResponseEntity<User> save(@RequestBody User user){
-    return new ResponseEntity<>(userService.save(user), HttpStatus.CREATED);
+    if(mailboxlayerService.mailIsValid(user.getEmail())){
+      user.setEmailVerified(true);
+      return new ResponseEntity<>(userService.save(user), HttpStatus.CREATED);
+    }
+    return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
   }
 
   @DeleteMapping("/{id}")

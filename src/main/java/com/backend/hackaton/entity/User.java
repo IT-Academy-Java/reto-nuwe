@@ -11,7 +11,7 @@ public class User {
   private String name;
   private String username;
   private String email;
-  private Boolean isEmailVerified;
+  private Boolean emailVerified;
   private String password;
   private String gitlabUserId;
   private String countryId;
@@ -19,12 +19,10 @@ public class User {
   public User() {
   }
 
-  public User(String id, String name, String username, String email, Boolean isEmailVerified, String password, String gitlabUserId, String countryId) {
+  public User(String id, String name, String username, String email, String password, String gitlabUserId, String countryId) {
     this.id = id;
     this.name = name;
     this.username = username;
-    this.email = email;
-    this.isEmailVerified = isEmailVerified;
     this.password = password;
     this.gitlabUserId = gitlabUserId;
     this.countryId = countryId;
@@ -63,11 +61,11 @@ public class User {
   }
 
   public Boolean getEmailVerified() {
-    return isEmailVerified;
+    return emailVerified;
   }
 
   public void setEmailVerified(Boolean emailVerified) {
-    isEmailVerified = emailVerified;
+    this.emailVerified = emailVerified;
   }
 
   public String getPassword() {
@@ -93,4 +91,19 @@ public class User {
   public void setCountryId(String countryId) {
     this.countryId = countryId;
   }
+
+  @Override
+  public String toString() {
+    return "User{" +
+      "id='" + id + '\'' +
+      ", name='" + name + '\'' +
+      ", username='" + username + '\'' +
+      ", email='" + email + '\'' +
+      ", emailVerified=" + emailVerified +
+      ", password='" + password + '\'' +
+      ", gitlabUserId='" + gitlabUserId + '\'' +
+      ", countryId='" + countryId + '\'' +
+      '}';
+  }
+
 }
