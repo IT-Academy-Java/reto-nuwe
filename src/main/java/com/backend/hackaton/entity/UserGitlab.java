@@ -1,7 +1,10 @@
 package com.backend.hackaton.entity;
 
+import org.springframework.data.annotation.Id;
+
 public class UserGitlab {
 
+  @Id
   private int id;
   private String name;
   private String username;
