@@ -6,4 +6,5 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 
 public interface ICountryService {
   Country getCountryByName(String name) throws JsonProcessingException;
+  Country[] getAllCountries() throws JsonProcessingException;
 }

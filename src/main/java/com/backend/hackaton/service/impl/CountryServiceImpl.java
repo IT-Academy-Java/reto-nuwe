@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+
 @Service
 public class CountryServiceImpl implements ICountryService {
 
@@ -22,6 +23,14 @@ public class CountryServiceImpl implements ICountryService {
       .getForObject(restCountriesUrl, Country[].class);
 
     return country[0];
+  }
+
+  @Override
+  public Country[] getAllCountries() throws JsonProcessingException {
+    String restCountriesUrl = "https://restcountries.eu/rest/v2/all";
+    Country[] countries = restTemplate
+      .getForObject(restCountriesUrl, Country[].class);
+    return countries;
   }
 
   @Bean

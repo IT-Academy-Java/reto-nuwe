@@ -3,6 +3,7 @@ package com.backend.hackaton.entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+
 @Document(collection = "country")
 public class Country {
 

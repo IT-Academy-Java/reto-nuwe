@@ -20,4 +20,9 @@ public class CountryController {
   public Country getCountryByName(@PathVariable("name") String name) throws JsonProcessingException {
     return countryService.getCountryByName(name);
   }
+
+  @GetMapping()
+  public Country[] getAllCountries() throws JsonProcessingException {
+    return countryService.getAllCountries();
+  }
 }
