@@ -23,10 +23,7 @@ public class UserGithubServiceImpl implements IUserGithubService {
     return user;
   }
 
-  @Bean
-  public RestTemplate restTemplate() {
-    return new RestTemplate();
-  }
+
 
 
 }

@@ -1,6 +1,8 @@
 package com.backend.hackaton.util;
 
 import com.backend.hackaton.entity.UserGitlab;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
 import java.util.Map;
