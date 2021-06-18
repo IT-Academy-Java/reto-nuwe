@@ -1,6 +1,7 @@
 package com.backend.hackaton.service.impl;
 
 import com.backend.hackaton.entity.UserGithub;
+import com.backend.hackaton.repository.IUserGithubRepository;
 import com.backend.hackaton.service.IUserGithubService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,9 @@ public class UserGithubServiceImpl implements IUserGithubService {
   @Autowired
   RestTemplate restTemplate;
 
+  @Autowired
+  private IUserGithubRepository userGithubRepository;
+
   @Override
   public UserGithub getUserGithub(String username) throws JsonProcessingException {
 
@@ -23,7 +27,10 @@ public class UserGithubServiceImpl implements IUserGithubService {
     return user;
   }
 
-
+  @Override
+  public UserGithub save(UserGithub userGithub) {
+    return userGithubRepository.save(userGithub);
+  }
 
 
 }
