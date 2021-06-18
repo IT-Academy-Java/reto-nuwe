@@ -1,6 +1,12 @@
 package com.backend.hackaton.entity;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "user")
 public class UserGithub {
+
+  @Id
   private int id;
   private String login;
   private String html_url;

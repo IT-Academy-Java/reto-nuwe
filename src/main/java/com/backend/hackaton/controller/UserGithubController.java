@@ -1,10 +1,8 @@
 package com.backend.hackaton.controller;
 
-import com.backend.hackaton.entity.User;
 import com.backend.hackaton.entity.UserGithub;
 import com.backend.hackaton.service.impl.UserGithubServiceImpl;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

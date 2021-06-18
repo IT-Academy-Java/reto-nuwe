@@ -6,5 +6,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 public interface IUserGitlabService {
 
   UserGitlab getUserGitlab(String id) throws JsonProcessingException;
+  UserGitlab save(UserGitlab userGitlab);
 
 }
